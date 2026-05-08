@@ -69,14 +69,3 @@ jobs:
         with:
           path: "dist/*"
           name: "RFD-${{ matrix.os }}"
-
-      - name: Release with Notes
-        uses: softprops/action-gh-release@v1
-        with:
-          files: "dist/*"
-          name: ${{ env.release_name }}
-          tag_name: ${{ env.tag_name }}
-          generate_release_notes: true
-          prerelease: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
